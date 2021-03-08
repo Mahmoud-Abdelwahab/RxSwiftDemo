@@ -19,6 +19,41 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rxLogic()
+        ///////////////////////////////
+        //MARK:- published subject emits all events from the source
+        let pubSub = PublishSubject<String>()
+        
+        let observer1 = pubSub.subscribe(onNext: {
+            item in
+            print(item)
+        }).disposed(by: disposeBag)
+        
+        pubSub.onNext("Mahmoud")
+        pubSub.onNext("Abdulwahab")
+        pubSub.onNext("AbdulSalam")
+        
+        
+        
+        //MARK:- published subject emits all events from the source
+ 
+        let behaviorSub = BehaviorSubject<String>(value: "")
+        
+        let observer2 = behaviorSub.subscribe(onNext: { item in
+            print("****** \(item) ******")
+        })
+        
+        let observer3 = behaviorSub.subscribe(onNext: { item in
+            print("****** \(item) ******")
+        })
+        
+        behaviorSub.onNext("behavior --->>>>>>>>>>>>>> 1")
+        behaviorSub.onNext("behavior --->>>>>>>>>>>>>> 2")
+        behaviorSub.onNext("behavior --->>>>>>>>>>>>>> 3")
+    }
+
+
+    func  rxLogic(){
         //
         /*
        _ = tableData.bind(to: tableView.rx.items(cellIdentifier: "cell")){
@@ -51,7 +86,5 @@ class ViewController: UIViewController {
             print(indexPath)
         }).disposed(by: disposeBag)
     }
-
-
 }
 
