@@ -8,4 +8,5 @@ target 'RxSwiftDemo' do
   # Pods for RxSwiftDemo
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod 'RxDataSources', '~> 4.0'
 end

@@ -19,9 +19,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fdx-sF-8w9">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="FYr-n3-poQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="80" id="a6n-J3-01Q" customClass="FoodCell" customModule="RxSwiftDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a6n-J3-01Q" id="lWd-XA-XxM">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -65,8 +70,12 @@
                             <constraint firstItem="fdx-sF-8w9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nS6-ai-7Rf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="C33-73-RoE"/>
+                    <navigationItem key="navigationItem" id="C33-73-RoE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="NF7-SE-8UT"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addNewTitleBtn" destination="NF7-SE-8UT" id="xDs-zO-RaF"/>
+                        <outlet property="searchBar" destination="FYr-n3-poQ" id="pNm-V7-zRF"/>
                         <outlet property="tableView" destination="fdx-sF-8w9" id="XM4-BD-dwe"/>
                     </connections>
                 </viewController>
@@ -88,17 +97,57 @@
                                     <constraint firstAttribute="height" constant="247" id="Ydq-Iv-shG"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPR-CZ-7Su">
+                                <rect key="frame" x="20" y="301" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-ff-Od2">
+                                <rect key="frame" x="20" y="350" width="374" height="30"/>
+                                <state key="normal" title="Replace delegate with RX"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-wz-JZ8" customClass="CustomPopUp" customModule="RxSwiftDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="400" width="374" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="RT4-L6-ynK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBv-mX-dIE" customClass="CustomPopUp" customModule="RxSwiftDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="475" width="374" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="Mah-nG-5Dy"/>
+                                    <constraint firstAttribute="height" constant="70" id="SlL-j4-bHG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OC4-RG-fv9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OC4-RG-fv9" firstAttribute="trailing" secondItem="aBv-mX-dIE" secondAttribute="trailing" constant="20" id="0kP-QL-Gog"/>
+                            <constraint firstItem="OC4-RG-fv9" firstAttribute="trailing" secondItem="3dc-ff-Od2" secondAttribute="trailing" constant="20" id="5NC-8G-ASc"/>
+                            <constraint firstItem="rPR-CZ-7Su" firstAttribute="top" secondItem="zS0-Ik-d8L" secondAttribute="bottom" constant="10" id="HQ5-bn-4bo"/>
+                            <constraint firstItem="3dc-ff-Od2" firstAttribute="leading" secondItem="OC4-RG-fv9" secondAttribute="leading" constant="20" id="N5X-l3-d6M"/>
+                            <constraint firstItem="3dc-ff-Od2" firstAttribute="top" secondItem="rPR-CZ-7Su" secondAttribute="bottom" constant="15" id="PY9-kq-TFe"/>
+                            <constraint firstItem="rPR-CZ-7Su" firstAttribute="leading" secondItem="OC4-RG-fv9" secondAttribute="leading" constant="20" id="QyL-hd-TfV"/>
+                            <constraint firstItem="yfm-wz-JZ8" firstAttribute="leading" secondItem="OC4-RG-fv9" secondAttribute="leading" constant="20" id="UJJ-My-e1A"/>
+                            <constraint firstItem="OC4-RG-fv9" firstAttribute="trailing" secondItem="yfm-wz-JZ8" secondAttribute="trailing" constant="20" id="YuB-Fi-ox8"/>
                             <constraint firstItem="OC4-RG-fv9" firstAttribute="trailing" secondItem="zS0-Ik-d8L" secondAttribute="trailing" id="ZlU-J7-AHw"/>
+                            <constraint firstItem="OC4-RG-fv9" firstAttribute="trailing" secondItem="rPR-CZ-7Su" secondAttribute="trailing" constant="20" id="aQQ-yq-Vr0"/>
+                            <constraint firstItem="yfm-wz-JZ8" firstAttribute="top" secondItem="3dc-ff-Od2" secondAttribute="bottom" constant="20" id="cOg-N1-bae"/>
                             <constraint firstItem="zS0-Ik-d8L" firstAttribute="leading" secondItem="OC4-RG-fv9" secondAttribute="leading" id="i0Q-3c-XqK"/>
+                            <constraint firstItem="aBv-mX-dIE" firstAttribute="leading" secondItem="OC4-RG-fv9" secondAttribute="leading" constant="20" id="iMT-zG-qgr"/>
+                            <constraint firstItem="aBv-mX-dIE" firstAttribute="top" secondItem="yfm-wz-JZ8" secondAttribute="bottom" constant="5" id="uRn-Gb-gUS"/>
                             <constraint firstItem="zS0-Ik-d8L" firstAttribute="top" secondItem="OC4-RG-fv9" secondAttribute="top" id="wsl-uj-Z27"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customView" destination="yfm-wz-JZ8" id="oie-88-3iY"/>
                         <outlet property="foodImage" destination="zS0-Ik-d8L" id="ar1-JN-ezm"/>
+                        <outlet property="setTitleBtn" destination="3dc-ff-Od2" id="m9W-lh-yKh"/>
+                        <outlet property="titleTF" destination="rPR-CZ-7Su" id="xhA-IQ-Pwf"/>
+                        <outlet property="titleTwolable" destination="aBv-mX-dIE" id="K3Q-OV-GNw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Krk-iY-4cz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -125,6 +174,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

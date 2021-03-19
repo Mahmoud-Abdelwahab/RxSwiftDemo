@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71048F026027DDB0090E8C8 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71048EF26027DDB0090E8C8 /* CustomPopUp.swift */; };
+		A71048F426027DFE0090E8C8 /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A71048F326027DFE0090E8C8 /* PopUpView.xib */; };
+		A71048F726027FE30090E8C8 /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71048F626027FE30090E8C8 /* UIViewExtention.swift */; };
+		A797757725FB6926003289F3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797757625FB6926003289F3 /* Product.swift */; };
 		A7A03EED25F6AE3A00D6A75E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EEC25F6AE3A00D6A75E /* AppDelegate.swift */; };
 		A7A03EEF25F6AE3A00D6A75E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EEE25F6AE3A00D6A75E /* SceneDelegate.swift */; };
 		A7A03EF125F6AE3A00D6A75E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A03EF025F6AE3A00D6A75E /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 		0154B43F62B26D38050C641F /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E53684C5A660FD7450B4CE9 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		40E2201081CE14660932E94A /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A71048EF26027DDB0090E8C8 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
+		A71048F326027DFE0090E8C8 /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
+		A71048F626027FE30090E8C8 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
+		A797757625FB6926003289F3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A7A03EE925F6AE3A00D6A75E /* RxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A03EEC25F6AE3A00D6A75E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A03EEE25F6AE3A00D6A75E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +64,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A71048EE26027D910090E8C8 /* RusableView */ = {
+			isa = PBXGroup;
+			children = (
+				A71048EF26027DDB0090E8C8 /* CustomPopUp.swift */,
+				A71048F326027DFE0090E8C8 /* PopUpView.xib */,
+				A71048F626027FE30090E8C8 /* UIViewExtention.swift */,
+			);
+			path = RusableView;
+			sourceTree = "<group>";
+		};
 		A7A03EE025F6AE3A00D6A75E = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +95,7 @@
 		A7A03EEB25F6AE3A00D6A75E /* RxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A71048EE26027D910090E8C8 /* RusableView */,
 				A7A03F1225F6B5B800D6A75E /* FoodDetailsVC */,
 				A7A03F0D25F6B4DB00D6A75E /* Cells */,
 				A7A03F0825F6B38100D6A75E /* Model */,
@@ -95,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A03F0925F6B39500D6A75E /* Food.swift */,
+				A797757625FB6926003289F3 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A03EF925F6AE3C00D6A75E /* LaunchScreen.storyboard in Resources */,
+				A71048F426027DFE0090E8C8 /* PopUpView.xib in Resources */,
 				A7A03EF625F6AE3C00D6A75E /* Assets.xcassets in Resources */,
 				A7A03EF425F6AE3B00D6A75E /* Main.storyboard in Resources */,
 			);
@@ -238,12 +259,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71048F726027FE30090E8C8 /* UIViewExtention.swift in Sources */,
 				A7A03EF125F6AE3A00D6A75E /* ViewController.swift in Sources */,
 				A7A03F0A25F6B39500D6A75E /* Food.swift in Sources */,
 				A7A03F0F25F6B4FE00D6A75E /* FoodCell.swift in Sources */,
+				A71048F026027DDB0090E8C8 /* CustomPopUp.swift in Sources */,
 				A7A03F1425F6B5E700D6A75E /* FoodDetailsVC.swift in Sources */,
 				A7A03EED25F6AE3A00D6A75E /* AppDelegate.swift in Sources */,
 				A7A03EEF25F6AE3A00D6A75E /* SceneDelegate.swift in Sources */,
+				A797757725FB6926003289F3 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
